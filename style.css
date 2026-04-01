@@ -6,42 +6,37 @@ body {
     height: 100vh; 
     margin: 0; 
     font-family: sans-serif; 
+    overflow: hidden; /* Empêche de scroller si le bouton sort de l'écran */
 }
 
 .container { 
     text-align: center; 
-    position: relative; 
-    width: 100%;
 }
 
 h1 { 
     color: #d32f2f; 
-    font-size: 2rem;
 }
 
 #image-container img {
     max-width: 200px;
-    height: auto;
 }
 
 button { 
-    padding: 12px 25px; 
+    padding: 15px 30px; 
     font-size: 1.2rem; 
-    cursor: pointer; 
     border-radius: 10px; 
     border: none; 
-    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 #yesButton { 
     background-color: #4caf50; 
     color: white; 
-    margin-right: 20px; 
 }
 
 #noButton { 
     background-color: #f44336; 
     color: white; 
-    position: absolute; /* Indispensable pour qu'il s'enfuit partout sur l'écran */
-  }
-  
+    position: absolute; /* TRÈS IMPORTANT : Sans ça, le JS ne peut pas le bouger */
+    transition: 0.1s; /* Rend le mouvement fluide */
+}
